@@ -3,6 +3,8 @@ Pour que ce composant s'affiche correctement sur tous les navigateurs,
 est préférable d'importer un normalize plutôt qu'un reset
 */
 
+/*pour éviter les soucis d'affichage des background sur github page, je mets mon fichier styles.css à la racine*/
+
 header, footer, fieldset, h1, h2, h3 {
   margin: 0;
   margin-block-start: 0;
@@ -58,7 +60,7 @@ section {
 article {
   width: 760px;
   height: 760px;
-  background-image: url("../img/svg.svg");
+  background-image: url("img/svg.svg");
   background-position: center;
   background-origin: border-box;
   background-repeat: no-repeat;
@@ -86,7 +88,7 @@ article {
   position: absolute;
   top: -30px;
   left: 42%;
-  background: url("../img/quotes.svg") center no-repeat;
+  background: url("img/quotes.svg") center no-repeat;
   padding: 5px;
   width: 60px;
   height: 60px;
@@ -132,7 +134,7 @@ article {
   height: 2.2rem;
   margin: 0;
   padding: 0;
-  background: url("../img/plus.svg") center no-repeat;
+  background: url("img/plus.svg") center no-repeat;
   position: absolute;
   top: .8rem;
   left: 1.2rem;
