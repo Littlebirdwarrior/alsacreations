@@ -1,10 +1,119 @@
 /*Normalize --
 Pour que ce composant s'affiche correctement sur tous les navigateurs,
-est préférable d'importer un normalize plutôt qu'un resset
+est préférable d'importer un normalize plutôt qu'un reset
 */
 
+header, footer, fieldset, h1, h2, h3 {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+* {
+  box-sizing: content-box;
+  width: 100%;
+}
+
+
+/* Généraux*/
 body {
-  background: white;
+  background: #fdfcfc;
   color: black;
   font-family: 'Roboto', sans-serif;
+  height: 100vh;
+}
+
+header, footer {
+  background: #f1ebeb;
+  color: #333232;
+  padding: 1rem;
+}
+
+footer {
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h1 >span {
+  display: block;
+  font-size: 1rem;
+  color: #6631A9
+}
+
+main, section {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  width: 560px;
+  height: 560px;
+  background-image:  url("/img/svg.svg");
+  background-position: center;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 80%;
+
+  background: #fff;
+  border-radius: 30px;
+  display: flex;
+
+}
+
+.form fieldset {
+  width: 70%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  border: none;
+}
+
+.form fieldset p:first-child {
+  font-family: 'Roboto-Bold', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.form-select-group label, .form-select-group select {
+  display: inline;
+  font-size: 1.5rem;
+}
+
+.form-select-group select {
+  width: fit-content;
+}
+
+.button {
+  width: fit-content;
+  margin: 1rem auto 0;
+  font-size: 2.2rem;
+  background-color: #f4f4f4;
+  color: #6631A9;
+  padding: 0.5rem 3rem;
+  border-radius: 30px;
+  border: none;
+}
+
+.button:hover, .button:focus {
+  background-color: #6631A9;
+  color: #f4f4f4;
 }

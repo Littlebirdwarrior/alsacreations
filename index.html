@@ -24,16 +24,19 @@
         <section>
             <article>
                 <form action="" method="POST" target="_self" class="form">
-                    <fieldset class="">
-                        <label for="form-select">Aujourd'hui BTC vaut {devise}{nb}</label>
-                        <select id="form-select">
-                            <optgroup label="option-group">
-                                <option>{}</option>
-                                <option>{}</option>
-                                <option>{}</option>
-                            </optgroup>
-                        </select>
-                        <input type="submit" value="HOP!"/>
+                    <fieldset>
+                        <p>Aujourd'hui BTC vaut {devise}{nb}</p>
+                        <p class="form-select-group">
+                            <label for="form-select">Monnaie : </label>
+                            <select id="form-select">
+                                <optgroup label="option-group">
+                                    <option>{}</option>
+                                    <option>{}</option>
+                                    <option>{}</option>
+                                </optgroup>
+                            </select>
+                        </p>
+                        <input class="button" type="submit" value="Hop!"/>
                     </fieldset>
                 </form>
             </article>
