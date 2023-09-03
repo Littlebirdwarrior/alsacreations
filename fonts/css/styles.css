@@ -85,7 +85,7 @@ article {
   content: "";
   position: absolute;
   top: -30px;
-  left: 43%;
+  left: 42%;
   background: url("/img/quotes.svg") center no-repeat;
   padding: 5px;
   width: 60px;
@@ -153,10 +153,14 @@ article {
   position: relative;
 }
 
-.button:hover, .button:focus, .button:focus-visible {
+.button:hover {
   background-color: #6631A9;
   color: #f4f4f4;
-  border: 3px solid #6631A9 !important;
+  border: 3px solid #6631A9;
+}
+
+.button:focus-visible, .button:focus {
+  outline: #6631A9 auto 1px;
 }
 
 
@@ -202,6 +206,9 @@ article {
   }
 }
 
+
+/* Médiaquerie*/
+
 @media (max-width: 760px) {
   article {
     width: 100%;
@@ -213,14 +220,19 @@ article {
     height: 50%;
   }
 
-  .form::before {
-    left: 25%;
-  }
+}
+
+
+@media (max-width: 560px) {
 
   .form fieldset p:first-child {
     font-family: 'Roboto-Bold', sans-serif;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 2rem 0.2rem 0;
+  }
+
+  form::before {
+    left: 35%;
   }
 }
