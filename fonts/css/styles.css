@@ -1,0 +1,10 @@
+/*Normalize --
+Pour que ce composant s'affiche correctement sur tous les navigateurs,
+est préférable d'importer un normalize plutôt qu'un resset
+*/
+
+body {
+  background: white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
