@@ -23,20 +23,20 @@
     <main>
         <section>
             <article>
-                <form action="" method="POST" target="_self" class="form">
+                <form target="_self" class="form">
                     <fieldset>
-                        <p>Aujourd'hui BTC vaut {devise}{nb}</p>
+                        <p>Aujourd'hui BTC vaut <span id="devise"></span><span id="taux"></span></p>
                         <p class="form-select-group">
                             <label for="form-select">Monnaie : </label>
-                            <select id="form-select">
+                            <select onchange="afficherDevise()" id="form-select">
                                 <optgroup label="option-group">
-                                    <option>{}</option>
-                                    <option>{}</option>
-                                    <option>{}</option>
+                                    <option value="EUR">EUR</option>
+                                    <option value="GBP">GBP</option>
+                                    <option value="USD">USD</option>
                                 </optgroup>
                             </select>
                         </p>
-                        <input class="button" type="submit" value="Hop!"/>
+                        <input class="button" value="Hop!" onclick="requete()"/>
                     </fieldset>
                 </form>
             </article>
