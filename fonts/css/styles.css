@@ -56,24 +56,41 @@ section {
 }
 
 article {
-  width: 560px;
-  height: 560px;
-  background-image:  url("/img/svg.svg");
+  width: 760px;
+  height: 760px;
+  background-image: url("/img/svg.svg");
   background-position: center;
   background-origin: border-box;
   background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.form {
-  width: 80%;
+/*Form*/
 
+.form {
+  width: 60%;
+  height: 50%;
   background: #fff;
   border-radius: 30px;
   display: flex;
+  position: relative;
+}
 
+
+
+.form::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 43%;
+  background: url("/img/quotes.svg") center no-repeat;
+  padding: 5px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
 }
 
 .form fieldset {
@@ -89,8 +106,8 @@ article {
 .form fieldset p:first-child {
   font-family: 'Roboto-Bold', sans-serif;
   font-weight: bold;
-  font-size: 2rem;
-  margin: 0.5rem;
+  font-size: 2.2rem;
+  margin: 2rem 0.2rem 0;
 }
 
 .form-select-group label, .form-select-group select {
@@ -101,19 +118,109 @@ article {
 .form-select-group select {
   width: fit-content;
 }
-
-.button {
+/* Input/button */
+.button-content {
   width: fit-content;
   margin: 1rem auto 0;
+  position: relative;
+}
+
+/*Un element After ne marche pas sur le input, pour résoudre cela, j'inclue mon button dans un block*/
+.button-content span {
+  display: block;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0;
+  padding: 0;
+  background: url("/img/plus.svg") center no-repeat;
+  position: absolute;
+  top: .8rem;
+  left: 1.2rem;
+  z-index: 2;
+}
+
+.button {
+  display: block;
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
   font-size: 2.2rem;
   background-color: #f4f4f4;
   color: #6631A9;
   padding: 0.5rem 3rem;
   border-radius: 30px;
-  border: none;
+  border: 3px solid #f4f4f4;
+  position: relative;
 }
 
-.button:hover, .button:focus {
+.button:hover, .button:focus, .button:focus-visible {
   background-color: #6631A9;
   color: #f4f4f4;
+  border: 3px solid #6631A9 !important;
+}
+
+
+/*Animation*/
+
+.button-content:hover {
+  animation: bounce-top 0.9s
+}
+
+@keyframes bounce-top {
+  0% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  24% {
+  }
+  40% {
+    transform: translateY(-18px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+}
+
+@media (max-width: 760px) {
+  article {
+    width: 100%;
+    height: 100%;
+  }
+
+  .form {
+    width: 80%;
+    height: 50%;
+  }
+
+  .form::before {
+    left: 25%;
+  }
+
+  .form fieldset p:first-child {
+    font-family: 'Roboto-Bold', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin: 2rem 0.2rem 0;
+  }
 }

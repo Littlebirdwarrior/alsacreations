@@ -25,7 +25,7 @@
             <article>
                 <form target="_self" class="form">
                     <fieldset>
-                        <p>Aujourd'hui BTC vaut <span id="devise"></span><span id="taux"></span></p>
+                        <p>Aujourd'hui BTC vaut <span id="devise"></span><span id="taux">...</span></p>
                         <p class="form-select-group">
                             <label for="form-select">Monnaie : </label>
                             <select onchange="afficherDevise()" id="form-select">
@@ -36,7 +36,10 @@
                                 </optgroup>
                             </select>
                         </p>
-                        <input class="button" value="Hop!" onclick="requete()"/>
+                        <p class="button-content">
+                            <span class="button-before"></span>
+                            <input class="button" value="Hop!" onclick="requete()"/>
+                        </p>
                     </fieldset>
                 </form>
             </article>
