@@ -1,13 +1,13 @@
 //Definition des variables globales et constante
 const xhr = new XMLHttpRequest();
 
-let TauxUSD;
-let TauxEUR;
-let TauxGBP;
+let TauxUSD = localStorage.getItem('TauxUSD');
+let TauxEUR = localStorage.getItem('TauxEUR');
+let TauxGBP = localStorage.getItem('TauxGBP');
 
-let SymboleEUR;
-let SymboleUSD;
-let SymboleGBP;
+let SymboleEUR = localStorage.getItem('SymboleEUR');
+let SymboleUSD = localStorage.getItem('SymboleUSD');
+let SymboleGBP = localStorage.getItem('SymboleGBP');
 
 /**
  * Appel à l'API
@@ -32,6 +32,16 @@ function requete() {
             SymboleUSD = response.bpi.USD.symbol;
             SymboleEUR = response.bpi.EUR.symbol;
             SymboleGBP = response.bpi.GBP.symbol;
+
+            // Remplir le localStorage
+
+            localStorage.setItem('TauxUSD', TauxUSD);
+            localStorage.setItem('TauxEUR', TauxEUR);
+            localStorage.setItem('TauxGBP', TauxGBP);
+
+            localStorage.setItem('SymboleUSD', SymboleUSD);
+            localStorage.setItem('SymboleEUR', SymboleEUR);
+            localStorage.setItem('SymboleGBP', SymboleGBP);
 
             // On affiche les valeurs
             afficherDevise();
